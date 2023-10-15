@@ -11,6 +11,7 @@ namespace MagicVilla.Models
         public int Id { get; set; }
         [Required]
         public string Name { get; set; }
+        
         public int occupancy { get; set; }
         public int sqft { get; set; }
         public string details { get; set; }

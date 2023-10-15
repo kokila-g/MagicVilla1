@@ -4,6 +4,7 @@ using MagicVilla.Models.VillaDTO;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace MagicVilla.Controllers
 {
@@ -66,6 +67,8 @@ namespace MagicVilla.Controllers
             //}
             Villa model = new ()
             {
+                Name= villaDTO.Name,
+               
                 Amenity = villaDTO.Amenity,
                 details = villaDTO.details,
                 ImageURL = villaDTO.ImageURL,
@@ -112,6 +115,7 @@ namespace MagicVilla.Controllers
             //villa.sqft= villaDTO.sqft;
             Villa model = new()
             {
+                Name=villaDTO.Name,
                 Amenity = villaDTO.Amenity,
                 details = villaDTO.details,
                 ImageURL = villaDTO.ImageURL,
@@ -120,8 +124,12 @@ namespace MagicVilla.Controllers
                 sqft = villaDTO.sqft,
                 CreatedOn = villaDTO.CreatedOn
             };
+            //_db.VillaList.Update(model);
+            //_db.SaveChanges();
+            _db.Attach(model);
             _db.VillaList.Update(model);
             _db.SaveChanges();
+
             return NoContent();
                     
         }
@@ -139,6 +147,7 @@ namespace MagicVilla.Controllers
             }
             VillaDTO villaDTO = new()
             {
+                Name=villa.Name,
                 Amenity = villa.Amenity,
                 details = villa.details,
                 ImageURL = villa.ImageURL,
@@ -150,6 +159,7 @@ namespace MagicVilla.Controllers
             patchDTO.ApplyTo(villaDTO, ModelState);
             Villa model = new()
             {
+                Name = villaDTO.Name,
                 Amenity = villaDTO.Amenity,
                 details = villaDTO.details,
                 ImageURL = villaDTO.ImageURL,
