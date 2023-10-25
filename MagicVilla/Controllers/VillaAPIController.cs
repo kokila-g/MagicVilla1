@@ -115,7 +115,8 @@ namespace MagicVilla.Controllers
             //villa.sqft= villaDTO.sqft;
             Villa model = new()
             {
-                Name=villaDTO.Name,
+                Id= ID,
+                Name =villaDTO.Name,
                 Amenity = villaDTO.Amenity,
                 details = villaDTO.details,
                 ImageURL = villaDTO.ImageURL,
@@ -124,11 +125,11 @@ namespace MagicVilla.Controllers
                 sqft = villaDTO.sqft,
                 CreatedOn = villaDTO.CreatedOn
             };
-            //_db.VillaList.Update(model);
-            //_db.SaveChanges();
-            _db.Attach(model);
             _db.VillaList.Update(model);
             _db.SaveChanges();
+            //_db.Attach(model);
+            //_db.VillaList.Update(model);
+            //_db.SaveChanges();
 
             return NoContent();
                     
@@ -147,6 +148,7 @@ namespace MagicVilla.Controllers
             }
             VillaDTO villaDTO = new()
             {
+                Id= villa.Id,
                 Name=villa.Name,
                 Amenity = villa.Amenity,
                 details = villa.details,
@@ -159,6 +161,7 @@ namespace MagicVilla.Controllers
             patchDTO.ApplyTo(villaDTO, ModelState);
             Villa model = new()
             {
+                Id = villaDTO.Id,
                 Name = villaDTO.Name,
                 Amenity = villaDTO.Amenity,
                 details = villaDTO.details,
@@ -168,8 +171,21 @@ namespace MagicVilla.Controllers
                 sqft = villaDTO.sqft,
                 CreatedOn = villaDTO.CreatedOn
             };
-            _db.VillaList.Update(model);
-            _db.SaveChanges();
+
+            var entry = _db.VillaList.Entry(model);
+
+            if (entry.State == EntityState.Detached)
+            {
+
+                _db.VillaList.Update(model);
+                _db.SaveChanges();
+            }
+            else
+            {
+                entry.State = EntityState.Detached;
+                _db.VillaList.Update(model);
+                _db.SaveChanges();
+            }
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);

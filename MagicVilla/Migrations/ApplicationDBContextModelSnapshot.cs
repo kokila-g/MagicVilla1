@@ -70,7 +70,7 @@ namespace MagicVilla.Migrations
                         {
                             Id = 1,
                             Amenity = "",
-                            CreatedOn = new DateTime(2023, 6, 3, 19, 55, 32, 130, DateTimeKind.Local).AddTicks(9117),
+                            CreatedOn = new DateTime(2023, 10, 16, 17, 2, 5, 860, DateTimeKind.Local).AddTicks(4389),
                             ImageURL = "https://dotnetmastery.com/bluevillaimages/villa3.jpg",
                             Name = "Royal Villa",
                             UpdatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -83,7 +83,7 @@ namespace MagicVilla.Migrations
                         {
                             Id = 2,
                             Amenity = "",
-                            CreatedOn = new DateTime(2023, 6, 3, 19, 55, 32, 130, DateTimeKind.Local).AddTicks(9147),
+                            CreatedOn = new DateTime(2023, 10, 16, 17, 2, 5, 860, DateTimeKind.Local).AddTicks(4405),
                             ImageURL = "https://dotnetmastery.com/bluevillaimages/villa1.jpg",
                             Name = "Premium Pool Villa",
                             UpdatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -96,7 +96,7 @@ namespace MagicVilla.Migrations
                         {
                             Id = 3,
                             Amenity = "",
-                            CreatedOn = new DateTime(2023, 6, 3, 19, 55, 32, 130, DateTimeKind.Local).AddTicks(9150),
+                            CreatedOn = new DateTime(2023, 10, 16, 17, 2, 5, 860, DateTimeKind.Local).AddTicks(4406),
                             ImageURL = "https://dotnetmastery.com/bluevillaimages/villa4.jpg",
                             Name = "Luxury Pool Villa",
                             UpdatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -109,7 +109,7 @@ namespace MagicVilla.Migrations
                         {
                             Id = 4,
                             Amenity = "",
-                            CreatedOn = new DateTime(2023, 6, 3, 19, 55, 32, 130, DateTimeKind.Local).AddTicks(9153),
+                            CreatedOn = new DateTime(2023, 10, 16, 17, 2, 5, 860, DateTimeKind.Local).AddTicks(4408),
                             ImageURL = "https://dotnetmastery.com/bluevillaimages/villa5.jpg",
                             Name = "Diamond Villa",
                             UpdatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -122,7 +122,7 @@ namespace MagicVilla.Migrations
                         {
                             Id = 5,
                             Amenity = "",
-                            CreatedOn = new DateTime(2023, 6, 3, 19, 55, 32, 130, DateTimeKind.Local).AddTicks(9157),
+                            CreatedOn = new DateTime(2023, 10, 16, 17, 2, 5, 860, DateTimeKind.Local).AddTicks(4409),
                             ImageURL = "https://dotnetmastery.com/bluevillaimages/villa2.jpg",
                             Name = "Diamond Pool Villa",
                             UpdatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
